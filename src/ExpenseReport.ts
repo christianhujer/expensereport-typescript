@@ -1,8 +1,8 @@
-let message: string = 'Hello, World!\n';
+const message = 'Hello, World!\n';
 
 const sumTwoValues = (a: number, b: number): number => a + b
 
-const printHelloWorld = () => {
+const printHelloWorld = (): void => {
   process.stdout.write(message);
 }
 

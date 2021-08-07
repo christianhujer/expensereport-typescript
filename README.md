@@ -6,7 +6,6 @@ The ExpenseReport refactoring example in TypeScript.
 2. Jest as the testing framework
 3. Eslint as the linting tool
 4. Prettier as the formatting tool
-5. Husky as a pre-commit hook runner
 
 ## Prerequisites
 1. NVM installed on your machine from [here](https://github.com/nvm-sh/nvm)

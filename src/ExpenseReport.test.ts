@@ -1,4 +1,18 @@
-import {printHelloWorld, sumTwoValues} from "./ExpenseReport";
+import { printHelloWorld, printReport, sumTwoValues, Expense, ExpenseType } from './ExpenseReport'
+
+describe(`ExpenseReport`, () => {
+    it(`should keep its original behavior`, () => {
+        let interceptedOutput = ""
+        jest.spyOn(process.stdout, "write").mockImplementation((output: string): boolean => {
+            interceptedOutput += output
+            return true;
+        })
+        printReport([
+          new Expense(ExpenseType.DINNER, 5001)
+        ])
+        expect(interceptedOutput).toEqual("")
+    })
+})
 
 describe(`given I have this test suite`, () => {
     it(`should always output Hello, World!`, () => {

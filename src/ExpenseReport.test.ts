@@ -8,7 +8,7 @@ describe(`ExpenseReport`, () => {
             return true;
         })
         printReport([
-          new Expense(ExpenseType.DINNER, 5001)
+          new Expense("dinner", 5001)
         ])
         expect(interceptedOutput).toEqual("")
     })

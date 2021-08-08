@@ -6,9 +6,7 @@ const printHelloWorld = (): void => {
   process.stdout.write(message);
 }
 
-enum ExpenseType {
-  DINNER, BREAKFAST, CAR_RENTAL
-}
+type ExpenseType = "dinner" | "breakfast" | "car-rental"
 
 class Expense {
   type: ExpenseType
@@ -27,24 +25,24 @@ function printReport(expenses: Expense[]) {
 
 
   for (const expense of expenses) {
-    if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST) {
+    if (expense.type == "dinner" || expense.type == "breakfast") {
       mealExpenses += expense.amount
     }
 
     let expenseName = ""
     switch (expense.type) {
-      case ExpenseType.DINNER:
+      case "dinner":
         expenseName = "Dinner"
         break
-      case ExpenseType.BREAKFAST:
+      case "breakfast":
         expenseName = "Breakfast"
         break
-      case ExpenseType.CAR_RENTAL:
+      case "car-rental":
         expenseName = "Car Rental"
         break
     }
 
-    let mealOverExpensesMarker = expense.type == ExpenseType.DINNER && expense.amount > 5000 || expense.type == ExpenseType.BREAKFAST && expense.amount > 1000 ? "X" : " "
+    let mealOverExpensesMarker = expense.type == "dinner" && expense.amount > 5000 || expense.type == "breakfast" && expense.amount > 1000 ? "X" : " "
 
     process.stdout.write(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker + "\n")
 
